@@ -100,13 +100,8 @@ def build_wc_dataset():
     return inputs, targets
 
 
-def callback(params, t, g):
-    print("Iteration {} log likelihood {}".format(t, -objective(params, t)))
-
-
 def initialize_weights(G, D):
     init_scale = 0.1
-
     init_weights_enc = init_random_params(init_scale, layer_sizes=[D, G * D, G * D])
     init_weights_dec = init_random_params(init_scale, layer_sizes=[G * D, G * D, D])
     init_weights_koop = init_random_params(init_scale, layer_sizes=[G * D, G * D])
