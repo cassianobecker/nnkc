@@ -25,9 +25,9 @@ class cartpole:
         Cx = np.cos(x[2])
         D = self.M + self.m*Sx**2
         dx[0] = x[1]
-        dx[1] = 1/D*(-self.m*self.g*Sx*Cx + self.m*self.L*x[2]**2*Sx - self.d*x[1] + self.input(t))
+        dx[1] = 1/D*(-self.m*self.g*Sx*Cx + self.m*self.L*x[3]**2*Sx - self.d*x[1] + self.input(t))
         dx[2] = x[3]
-        dx[3] = 1/D/self.L*((self.m + self.M)*self.g*Sx - self.m*self.L*x[2]**2*Sx*Cx + Cx*self.d*x[1] - Cx*self.input(t))
+        dx[3] = 1/D/self.L*((self.m + self.M)*self.g*Sx - self.m*self.L*x[3]**2*Sx*Cx + Cx*self.d*x[1] - Cx*self.input(t))
 
         return dx
 
